@@ -21,6 +21,7 @@ class NetworkManger: ObservableObject {
                     if let safeData = data {
                         do {
                             let r = try decoder.decode(Post.self, from: safeData)
+                            // This is a hack because how hacker news moving to Firebase vs. the lesson
                             DispatchQueue.main.async {
                                 self.posts.append(r)
                             }
